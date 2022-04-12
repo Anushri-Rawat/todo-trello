@@ -1,0 +1,21 @@
+.todoform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoform > input {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 100px;
+  margin: 0 10px;
+}
+.todoform > button {
+  padding: 10px;
+  background: #7852ff;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 0 10px;
+}
