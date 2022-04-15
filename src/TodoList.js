@@ -34,7 +34,10 @@ const TodoList = (props) => {
         {_.map(props.state, (data, key) => {
           return (
             <div className="column" key={key}>
-              <h3 className={key}>{data.title}</h3>
+              <h3 className={key}>
+                {data.title}
+                <div className="count">{data.items.length}</div>
+              </h3>
               <Droppable droppableId={key}>
                 {(provided) => {
                   return (
@@ -51,7 +54,8 @@ const TodoList = (props) => {
                             key={el.id}
                             state={props.state}
                             setState={props.setState}
-                            setUpdate={props.setUpdate}
+                            setText={props.setText}
+                            setEditId={props.setEditId}
                           />
                         );
                       })}

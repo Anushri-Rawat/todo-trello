@@ -9,3 +9,8 @@ body {
   padding: 20px;
   font-family: "Playfair Display", serif;
 }
+@media (max-width: 690px) {
+  body {
+    padding: 0 0 20px;
+  }
+}

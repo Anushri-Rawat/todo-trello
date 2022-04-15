@@ -19,3 +19,12 @@
   border-radius: 5px;
   margin: 0 10px;
 }
+.hide {
+  display: none;
+}
+@media (max-width: 570px) {
+  .todoform {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

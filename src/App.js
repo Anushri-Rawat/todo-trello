@@ -1,13 +1,12 @@
 import Header from "./Header.js";
 import InputForm from "./InputForm.js";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useReducer } from "react";
 import TodoList from "./TodoList.js";
 import React from "react";
 
 function App() {
   const [text, setText] = useState("");
-  const [update, setUpdate] = useState({});
-
+  const [editId, setEditId] = useState(false);
   const [state, setState] = useState({
     todo: {
       title: "Todo",
@@ -50,10 +49,17 @@ function App() {
       <InputForm
         text={text}
         setText={setText}
+        state={state}
         setState={setState}
-        update={update}
+        setEditId={setEditId}
+        editId={editId}
       />
-      <TodoList state={state} setState={setState} setUpdate={setUpdate} />
+      <TodoList
+        state={state}
+        setState={setState}
+        setText={setText}
+        setEditId={setEditId}
+      />
       <button
         onClick={clearCompletedTaskHandler}
         style={{

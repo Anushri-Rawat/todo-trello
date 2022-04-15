@@ -8,7 +8,6 @@ export default function TodoItem(props) {
   const el = props.el;
   const index = props.index;
   let mergedObj = {};
-  let updatedItem = {};
 
   const removeTodoItem = (e) => {
     _.map(props.state, (data, key) => {
@@ -29,12 +28,12 @@ export default function TodoItem(props) {
 
   const updateTodoItem = (e) => {
     _.map(props.state, (data, key) => {
-      updatedItem = data.items.find(
-        (val) => val.id === e.target.parentElement.parentElement.id
-      );
-      if (updatedItem) {
-        props.setUpdate(updatedItem);
-      }
+      data.items.map((todo) => {
+        if (todo.id === e.target.parentElement.parentElement.id) {
+          props.setEditId(todo.id);
+          props.setText(todo.name);
+        }
+      });
     });
   };
 

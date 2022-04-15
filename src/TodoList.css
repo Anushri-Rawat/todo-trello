@@ -9,6 +9,7 @@
   margin: 20px;
   text-align: center;
 }
+
 .in-progress,
 .todo,
 .completed {
@@ -17,6 +18,19 @@
   border-radius: 5px;
   font-weight: 400;
   color: #fff;
+  position: relative;
+}
+.count {
+  width: 20px;
+  height: 20px;
+  background: white;
+  padding: 2px 0;
+  font-size: 15px;
+  color: black;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  border-radius: 50%;
 }
 .todo {
   background-color: #8ea1ad;
@@ -56,4 +70,19 @@
 }
 .item:hover i {
   display: block;
+}
+.completed + .droppable-col > .item > .control-buttons {
+  cursor: grab;
+}
+.completed + .droppable-col > .item:hover i {
+  display: none;
+}
+@media (max-width: 690px) {
+  .todo-list-type {
+    flex-direction: column;
+    align-items: center;
+  }
+  .column {
+    width: 80%;
+  }
 }
